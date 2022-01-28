@@ -18,6 +18,10 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    public Employee getById(int id){
+        return employeeRepository.getById(id);
+    }
+
     public List<Employee> findByName(String name){
         return employeeRepository.findByNameContaining(name);
     }
@@ -25,4 +29,13 @@ public class EmployeeService {
     public List<Employee> findBySalary(double salary){
         return employeeRepository.findBySalaryLessThanEqual(salary);
     }
+
+    public Employee save(Employee employee){
+        return employeeRepository.save(employee);
+    }
+
+    public void dalete(Employee employee){
+        employeeRepository.delete(employee);
+    }
+
 }
